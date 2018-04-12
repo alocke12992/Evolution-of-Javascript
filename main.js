@@ -48,6 +48,23 @@ function startFight() {
   placeFighters(fighting);
 }
 
+function winner(position) {
+  var fighter = document.getElementById('fighter_' + position);
+  var data = fighter.dataset;
+  var label = document.getElementById('winner');
+  label.innerHTML = "Winner: " + data.name;
+  students.push(data);
+  var fighting = selectStudents();
+  placeFighters(fighting);
+}
+
+var button = document.getElementById('loading_zone');
+var leftFighter = document.getElementById('left');
+var rightFighter = document.getElementById('right');
+button.addEventListener('click', pullStudents)
+leftFighter.addEventListener('click', function () {winner('left')});
+rightFighter.addEventListener('click', function () {winner('right')});
+
 function pullStudents() {
   if (!loaded) {
     var xhr = new XMLHttpRequest()

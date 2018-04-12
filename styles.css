@@ -7,6 +7,10 @@ h1 {
   text-align: center;
 }
 
+img {
+  height: 200px;
+}
+
 #loading_zone {
   border: solid 1px red;
   min-height: 100px;
@@ -29,5 +33,5 @@ h1 {
   border: solid 1px white;
   cursor: pointer;
 }
-
+.green { color: red; }
     
