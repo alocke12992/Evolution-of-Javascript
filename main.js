@@ -1,5 +1,6 @@
 var loaded = false;
 var students = [];
+const Avatar = require('./Avatar')
 
 function renderStudents() {
   var list = document.getElementById('students')
@@ -25,13 +26,13 @@ function selectStudents() {
   return [left, right]
 }
 
-function createAvatar(position, student) {
+function Avatar(position, student) {
   return "<h5 id='fighter_" + position + "' data-name='" + student.name + "' data-avatar='" + student.avatar + "' class='center fighter'>" + student.name + "</h5><image class='avatar' src='" + student.avatar + "'/>"
 }
 
 function placeFighters(fighting) {
-  var left = createAvatar('left', fighting[0]);
-  var right = createAvatar('right', fighting[1]);
+  var left = Avatar('left', fighting[0]);
+  var right = Avatar('right', fighting[1]);
   var leftBox = document.getElementById('left');
   var rightBox = document.getElementById('right');
   leftBox.innerHTML = left;
@@ -58,7 +59,7 @@ function winner(position) {
     var fighting = selectStudents();
     placeFighters(fighting);
   } else {
-    var avatar = createAvatar(position, data);
+    var avatar = Avatar(position, data);
     var div = document.createElement('div');
     div.className = 'winner';
     div.innerHTML = avatar;
