@@ -54,8 +54,21 @@ function winner(position) {
   var label = document.getElementById('winner');
   label.innerHTML = "Winner: " + data.name;
   students.push(data);
-  var fighting = selectStudents();
-  placeFighters(fighting);
+  if (students.length !== 1) {
+    var fighting = selectStudents();
+    placeFighters(fighting);
+  } else {
+    var avatar = createAvatar(position, data);
+    var div = document.createElement('div');
+    div.className = 'winner';
+    div.innerHTML = avatar;
+    var left = document.getElementById('left');
+    var right = document.getElementById('right');
+    var fightZone = document.getElementById('fight_zone');
+    left.remove();
+    right.remove();
+    fightZone.append(div);
+  }
 }
 
 var button = document.getElementById('loading_zone');

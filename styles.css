@@ -9,6 +9,7 @@ h1 {
 
 img {
   height: 200px;
+  border-radius: 100px;
 }
 
 #loading_zone {
