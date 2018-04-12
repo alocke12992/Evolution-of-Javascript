@@ -13,4 +13,4 @@ const Avatar = (position, {name, avatar}) => (
    />`
 )
 
-module.exports = Avatar;
+export default Avatar;
