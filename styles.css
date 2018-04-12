@@ -1,12 +1,33 @@
-h1 {
-      text-align: center;
-    }
+body {
+  background-color: black;
+  color: white;
+}
 
-    #loading_zone {
-      border: solid 1px black;
-      min-height: 100px;
-      width: 300px;
-      cursor: pointer;
-    }
+h1 {
+  text-align: center;
+}
+
+#loading_zone {
+  border: solid 1px red;
+  min-height: 100px;
+  width: 300px;
+  cursor: pointer;
+}
+
+#fight_zone {
+  margin-left: 14%;
+}
+
+.left {
+  float: left;
+}
+
+.fight-box {
+  width: 300px;
+  height: 300px;
+  background-color: red;
+  border: solid 1px white;
+  cursor: pointer;
+}
 
     

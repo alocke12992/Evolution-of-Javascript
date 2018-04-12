@@ -1,5 +1,13 @@
 var loaded = false;
 
+function startFight() {
+  loaded = true;
+  var left = document.getElementById('left');
+  var right = document.getElementById('right');
+  left.className = 'left fight-box';
+  right.className = 'left fight-box';
+}
+
 function pullStudents() {
   if (!loaded) {
     var xhr = new XMLHttpRequest()
@@ -14,6 +22,7 @@ function pullStudents() {
         })
         loaded = true;
         document.getElementById('load_students').remove();
+        startFight();
       }
     }
     xhr.open('GET', 'https://canvas-students.herokuapp.com/api/student_list/58', true);
